@@ -10,7 +10,7 @@ const db = require('./models')
 
 //Controller Access
 const userController = require('./controllers/users.js')
-
+const postController = require('./controllers/posts.js')
 
 
 //Middleware
@@ -26,6 +26,11 @@ app.use((req, res, next) => {
 
 
 //Routes
+// app.use('/', (req, res) => {
+//     res.redirect('/home')
+// })
+
+app.use('/home', postController)
 app.use('/users', userController)
 
 
