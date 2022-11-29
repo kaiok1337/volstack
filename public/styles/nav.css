@@ -1,14 +1,15 @@
-body {
+html {
     background: linear-gradient(#FDFFFF 21.35%, #FFA842 54.69%, #C51E32 90.63%);
+    background-attachment: fixed;
 }
 
 #nav-bar {
     color: black;
     font-family: JetBrains Mono;
     font-style: bold;
-    grid-template-columns: auto;
-    font-size: 2em;
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
-    border: 2px solid red
 }
+
+#title {
+    justify-content: center;
+}
+

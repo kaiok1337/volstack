@@ -8,22 +8,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel ='stylesheet' href = 'styles/normalize.css'>
+    <link rel ='stylesheet' href = 'styles/skeleton.css'>
     <link rel ='stylesheet' href = 'styles/nav.css'>
 </head>
-<body>
-    <div id = 'nav-bar'>
-        <div class = 'title'>
-            <h1>VOLSTACK</h1>
+<nav>
+    <div class = 'container' id = 'nav-bar'>
+        <div class = 'row'>
+                <h1>VOLSTACK</h1>
         </div>
-        <div class = 'plus'>
-            <img src ='assets/ei_plus.png'>
+        <div class = 'row'>
+            <div class = 'four columns'>
+                <img src ='assets/ei_plus.png'>
+            </div>
+            <div class="four columns">
+                <img src ='assets/ei_navicon.png'>
+            </div>
+            <div class="four columns">
+                <img src ='assets/user.png'>
+           
         </div>
-        <div class="lines">
-            <img src ='assets/ei_navicon.png'>
-        </div>
-        <div class="person">
-            <img src ='assets/user.png'>
-        </div>
+         </div>
     </div>
+</nav>
+<body>
+    <% for (let post of posts) { %>
+<div>
+    <%= post.author %>
+    <h1>div</h1>
+</div>
+<% } %>
+
 </body>
 </html>
