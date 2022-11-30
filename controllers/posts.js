@@ -3,23 +3,23 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    db.User.find({}, (err, posts) => {
-        console.log(posts)
+    db.Post.find({}, (err, posts) => {
         res.render('index.ejs', {
             posts: posts
         })
     })
 })
 
-router.post('/', (req, res) => {
-    db.User.findByIdAndUpdate(
-        req.body.userId,
-        {$push: {posts: req.body}},
-        {new: true},
-        (err, user) => {
-            res.json(user)
-        }
-    )
+router.get('/newpost', (req, res) => {
+    db.Post.find({}, (err, posts) => {
+        res.render('addpost.ejs')
+    })
+})
+
+router.post('/newpost', (req, res) => {
+    db.Post.create(req.body, (err, post) => {
+        res.send(post)
+    })
 })
 
 module.exports = router

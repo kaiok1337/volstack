@@ -6,6 +6,9 @@ const port = 3000
 const methodOverride = require('method-override')
 
 //Model Access
+require('dotenv').config()
+const PORT = process.env.PORT
+const mongodbURI = process.env.MONGODBURI
 const db = require('./models')
 
 //Controller Access
@@ -26,12 +29,10 @@ app.use((req, res, next) => {
 
 
 //Routes
-// app.use('/', (req, res) => {
-//     res.redirect('/home')
-// })
 
-app.use('/home', postController)
-app.use('/users', userController)
+app.use('/', postController);
+
+app.use('/signup', userController);
 
 
 //Listener

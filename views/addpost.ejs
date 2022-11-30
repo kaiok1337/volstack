@@ -7,8 +7,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed</title>
-    <link rel ='stylesheet' href = 'styles/main.css'>
+    <title>Add Post</title>
+    <link rel="stylesheet" href="styles/addpost.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    
 </head>
 <nav>
     <div class = 'container' id = 'nav-bar'>
@@ -33,19 +35,21 @@
     </div>
 </nav>
 <body>
-<div class="post-container">
-    <% for (let post of posts) { %>
-        <a href="edit/<%= post._id %>" class="">
-            <div class = 'post'>
-                <h2 class="post-title"><%= post.author %></h2>
-                <p class="timestamp"><%= post.createdAt %></p>
-                <h1 class="volume-load"><%= post.volumeLoad %> LBS</h1>
-            </div>
-        </a>
-       
-        <% } %>
+<div class="form-parent">
+    <div class="form-container">
+        <h1>USERNAME</h1>
+        <form action="/newpost" method="post">
+            <input class='box' type="text" name="author">
+        </form>
+    </div>
+    <div class="form-container">
+        <h1>VOLUME LOAD</h1>
+        <form  action="/newpost" method="post">
+            <input class='box' type="number" name="volumeLoad">
+        </form>
+        <h3>LBS</h3>
+    </div>
 </div>
-
-
+    
 </body>
 </html>

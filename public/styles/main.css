@@ -1,0 +1,80 @@
+html {
+    background: linear-gradient(#FDFFFF 21.35%, #FFA842 54.69%, #C51E32 90.63%);
+    background-attachment: fixed;
+    font-family: JetBrains Mono;
+    overflow-x: hidden;
+}
+
+#nav-bar {
+    color: black;
+    font-style: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: fixed;
+    margin: 0;
+    left: 0;
+    top: 1em;
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    font-size: 3em;
+    height: 2em;
+}
+
+#title-text {
+    margin: 0
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    left: 10%;
+    bottom: 0;
+    position: fixed;
+    overflow: scroll;
+    z-index: 0;
+    height: 70%;
+    width: 80%;
+    scrollbar-width: none;
+}
+
+.post-container::-webkit-scrollbar {
+    display: none;
+    text-decoration: none
+  }
+
+.post {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    box-shadow: 5px 5px rgba(0,0,0,.5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    align-items: center;
+    width: 98%;
+    border: 1px solid black;
+}
+
+.post-title {
+    margin: .3em 0 0 .5em;
+    width: fit-content;
+    color: black
+}
+
+.timestamp {
+    margin: .3em 0 0 .5em;
+    font-size: 1em;
+}
+
+.volume-load {
+    text-align: right;
+    margin: 0 .5em 0 0;
+    font-size: 3em;
+}

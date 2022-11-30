@@ -1,15 +1,33 @@
 html {
     background: linear-gradient(#FDFFFF 21.35%, #FFA842 54.69%, #C51E32 90.63%);
     background-attachment: fixed;
+    font-family: JetBrains Mono;
+    overflow-x: hidden;
 }
 
 #nav-bar {
     color: black;
-    font-family: JetBrains Mono;
     font-style: bold;
-}
-
-#title {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    position: fixed;
+    margin: 0;
+    left: 0;
+    top: 1em;
+    z-index: 1;
 }
 
+.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    font-size: 3em;
+    height: 2em;
+}
+
+#title-text {
+    margin: 0
+}

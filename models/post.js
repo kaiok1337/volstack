@@ -4,14 +4,13 @@ const Schema = mongoose.Schema
 const postSchema = new Schema (
     {
         volumeLoad: { type: Number, required: true},
-        message: String,
-        author: { type: mongoose.ObjectId, ref: 'User', required: true}
+        author: { type: String, required: true, default: 'Anonymous' }
     },
     {
         timestamps: true,
     }
 )
 
-
-module.exports = postSchema
+const Post = mongoose.model('Post', postSchema)
+module.exports = Post
 
