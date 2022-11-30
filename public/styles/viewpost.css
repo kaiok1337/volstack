@@ -31,3 +31,12 @@ a {
     color: black;
     font-size: .9em;
 }
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 2em;
+    }
+    .form-parent {
+        height: 60%;
+    }
+}

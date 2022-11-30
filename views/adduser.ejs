@@ -7,9 +7,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed</title>
-    <link rel ='stylesheet' href = 'styles/main.css'>
+    <title>Add Post</title>
+    <link rel="stylesheet" href="styles/addpost.css">
     <link rel="stylesheet" href="styles/nav.css">
+    
 </head>
 <nav>
     <div class = 'container' id = 'nav-bar'>
@@ -18,35 +19,39 @@
         </div>
         <div class = 'menu'>
             <a href="/newpost">
-                <div class = 'icon'>
+                <div class = 'icon' style="border-bottom: 3px dotted black;">
                     <img src ='assets/ei_plus.png'>
                 </div>
             </a>
-            <div class="icon" style="border-bottom: 3px dotted black;">
-                <img src ='assets/ei_navicon.png'>
-            </div>
+            <a href="/">
+                <div class="icon">
+                    <img src ='assets/ei_navicon.png'>
+                </div>
+            </a>
             <a href="/signup">
                 <div class="icon">
                     <img src ='assets/user.png'>
                 </div>
             </a>
+
          </div>
     </div>
 </nav>
 <body>
-<div class="post-container">
-    <% for (let post of posts) { %>
-        <a href="<%= post._id %>" class="edit-link">
-            <div class = 'post'>
-                <h2 class="post-title"><%= post.author %></h2>
-                <p class="timestamp"><%= post.createdAt %></p>
-                <h1 class="volume-load"><%= post.volumeLoad %> LBS</h1>
-            </div>
-        </a>
-       
-        <% } %>
+<form  action="/newpost" method="post">
+<div class="form-parent">
+    <div class="form-container">
+        <h1>USERNAME</h1>
+        <input id="user-text" class='box' type="text" name="author">
+    </div>
+    <div class="form-container">
+        <h1>PASSWORD</h1>
+        <input class='box' type="number" name="volumeLoad">
+    </div>
+    <button type="submit" class="form-container">
+        <h1>SUBMIT</h1>
+    </button>
 </div>
-
-
+</form>
 </body>
 </html>

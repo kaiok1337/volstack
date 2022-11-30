@@ -23,11 +23,8 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
 
 app.use((req, res, next) => {
-    console.log('im runnin bro')
     next();
 })
-
-
 //Routes
 
 app.use('/', postController);
@@ -36,6 +33,5 @@ app.use('/signup', userController);
 
 //Listener
 app.listen(port, () => {
-    console.log(`App is running at localhost:${port}`)
 })
 

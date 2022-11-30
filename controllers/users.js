@@ -3,9 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    db.User.find({}, (err, users) => {
-        res.json(users)
-    })
+    res.render('adduser.ejs')
 })
 
 router.post('/', (req, res) => {

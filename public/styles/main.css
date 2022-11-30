@@ -94,3 +94,12 @@ a {
     -ms-user-select: none;
     user-select: none;
 }
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 2em;
+    }
+    .post-container {
+        height: 60%;
+    }
+}
