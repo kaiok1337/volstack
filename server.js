@@ -26,9 +26,9 @@ app.use((req, res, next) => {
     next();
 })
 //Routes
-
-app.use('/', postController);
 app.use('/signup', userController);
+app.use('/', postController);
+
 
 
 //Listener

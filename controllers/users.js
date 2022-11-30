@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     db.User.create(req.body, (err, users) => {
-        res.json(users)
+        res.render('betapage.ejs')
     })
 })
 
