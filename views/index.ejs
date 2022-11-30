@@ -35,7 +35,7 @@
 <body>
 <div class="post-container">
     <% for (let post of posts) { %>
-        <a href="edit/<%= post._id %>" class="">
+        <a href="<%= post._id %>" class="edit-link">
             <div class = 'post'>
                 <h2 class="post-title"><%= post.author %></h2>
                 <p class="timestamp"><%= post.createdAt %></p>

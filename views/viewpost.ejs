@@ -7,10 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Post</title>
-    <link rel="stylesheet" href="styles/addpost.css">
-    <link rel="stylesheet" href="styles/nav.css">
-    
+    <title>Edit or Delete</title>
+    <link rel="stylesheet" href="/styles/nav.css">
+    <link rel="stylesheet" href="/styles/viewpost.css">
 </head>
 <nav>
     <div class = 'container' id = 'nav-bar'>
@@ -20,17 +19,17 @@
         <div class = 'menu'>
             <a href="/newpost">
                 <div class = 'icon'>
-                    <img src ='assets/ei_plus.png'>
+                    <img src ='/assets/ei_plus.png'>
                 </div>
             </a>
             <a href="/">
                 <div class="icon">
-                    <img src ='assets/ei_navicon.png'>
+                    <img src ='/assets/ei_navicon.png'>
                 </div>
             </a>
             <a href="/signup">
                 <div class="icon">
-                    <img src ='assets/user.png'>
+                    <img src ='/assets/user.png'>
                 </div>
             </a>
 
@@ -38,21 +37,24 @@
     </div>
 </nav>
 <body>
-<form  action="/newpost" method="post">
 <div class="form-parent">
     <div class="form-container">
-        <h1>USERNAME</h1>
-        <input id="user-text" class='box' type="text" name="author">
+        <h1><%= post.author %></h1>
+        <h1><%= post.volumeLoad %> LBS</h1>
+        <p><%= post.createdAt %></p>
     </div>
-    <div class="form-container">
-        <h1>VOLUME LOAD</h1>
-        <input class='box' type="number" name="volumeLoad">
-        <h3>LBS</h3>
-    </div>
-    <button type="submit" class="form-container">
-        <h1>SUBMIT</h1>
-    </button>
+    <a href="/<%= post._id %>/edit">
+        <div class="form-container">
+            <h1>EDIT</h1>
+        </div>
+    </a>
+    <form action="/<%= post._id %>?_method=DELETE" method="post">
+        <button type="submit" class="form-container">
+            <h1>REMOVE</h1>
+        </button>
+    </form>
+    
 </div>
-</form>
+
 </body>
 </html>

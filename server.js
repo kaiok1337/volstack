@@ -31,7 +31,6 @@ app.use((req, res, next) => {
 //Routes
 
 app.use('/', postController);
-
 app.use('/signup', userController);
 
 
