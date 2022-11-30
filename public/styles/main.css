@@ -40,7 +40,7 @@ html {
     position: fixed;
     overflow: scroll;
     z-index: 0;
-    height: 70%;
+    height: 60%;
     width: 80%;
     scrollbar-width: none;
 }
@@ -100,6 +100,6 @@ a {
         font-size: 2em;
     }
     .post-container {
-        height: 60%;
+        height: 50%;
     }
 }
