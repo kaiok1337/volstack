@@ -22,7 +22,7 @@ router.get('/newpost', (req, res) => {
 
 router.post('/newpost', (req, res) => {
     db.Post.create(req.body, (err, post) => {
-        res.send(post)
+        res.redirect('/')
     })
 })
 
@@ -32,6 +32,8 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+
+
 router.get('/:id', (req, res) => {
     db.Post.findById(req.params.id, (err, post) => {
         res.render('viewpost.ejs', {
@@ -39,6 +41,22 @@ router.get('/:id', (req, res) => {
         })
     })
 })
+
+router.put('/:id', (req, res) => {
+    db.Post.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, post) => {
+        res.redirect('/')
+    })
+})
+
+router.get('/:id/edit', (req, res) => {
+    db.Post.findById(req.params.id, (err, post) => {
+        res.render('editpost.ejs', {
+            post: post
+        })
+    })
+})
+
+
 
 
 
